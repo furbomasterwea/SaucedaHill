@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1eutcd72xa3j"]
+
+[ext_resource type="Script" path="res://Mecanicas/piramide.gd" id="1_fkn7a"]
+[ext_resource type="AudioStream" uid="uid://ce227v6o325qq" path="res://Sonidos/ffffuck.mp3" id="2_6q5rd"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_0vv0s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cnrul"]
+
+[node name="Piramide" type="StaticBody3D"]
+script = ExtResource("1_fkn7a")
+prompt_message = "Piramide"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PrismMesh_0vv0s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_cnrul")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_6q5rd")
+
+[connection signal="interacted" from="." to="." method="_on_interacted"]

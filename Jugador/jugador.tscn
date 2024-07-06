@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://0yrvh4w33ky"]
+
+[ext_resource type="Script" path="res://Jugador/Jugador.gd" id="1_erek2"]
+[ext_resource type="PackedScene" uid="uid://5x286ujn2g53" path="res://Mecanicas/Interact/interact_ray.tscn" id="2_wspjr"]
+[ext_resource type="Texture2D" uid="uid://dr0xvf8svgw7p" path="res://Jugador/mira.png" id="3_qigcr"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3i882"]
+height = 1.5
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ub2b3"]
+height = 1.5
+
+[node name="Jugador" type="CharacterBody3D"]
+script = ExtResource("1_erek2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_3i882")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_ub2b3")
+
+[node name="Neck" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Neck"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.570505, 0)
+
+[node name="InteractRay" parent="Neck" instance=ExtResource("2_wspjr")]
+
+[node name="Crosshair" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.5
+offset_top = -19.0
+offset_right = 20.5
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_qigcr")
+expand_mode = 1

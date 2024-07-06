@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmi87mmphruy8"]
+
+[ext_resource type="Script" path="res://Mecanicas/DialogueSystem.gd" id="1_8xrba"]
+
+[sub_resource type="FontFile" id="FontFile_8wxa1"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[node name="DialogueSystem01" type="Node2D"]
+script = ExtResource("1_8xrba")
+
+[node name="DialogueBackground" type="Sprite2D" parent="."]
+
+[node name="Dialog" type="RichTextLabel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = SubResource("FontFile_8wxa1")
+bbcode_enabled = true
+tab_size = 12
