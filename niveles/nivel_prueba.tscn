@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dl5e8s2p7e6la"]
+[gd_scene load_steps=8 format=3 uid="uid://dl5e8s2p7e6la"]
 
 [ext_resource type="PackedScene" uid="uid://0yrvh4w33ky" path="res://Jugador/jugador.tscn" id="1_aw433"]
+[ext_resource type="PackedScene" uid="uid://bn20kfpdkbfmy" path="res://enemigos/enemigobasico.tscn" id="2_s5xif"]
 [ext_resource type="PackedScene" uid="uid://dniblxwp7m687" path="res://Mecanicas/caja.tscn" id="2_ulagy"]
 [ext_resource type="PackedScene" uid="uid://d1eutcd72xa3j" path="res://Mecanicas/piramide.tscn" id="3_g5rfc"]
 
@@ -18,13 +19,17 @@ size = Vector3(20, 0.5, 20)
 physics_material_override = SubResource("PhysicsMaterial_o31lk")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Piso"]
+transform = Transform3D(5.31288, 0, 0, 0, 1, 0, 0, 0, 2.80253, 0, 0, 0)
 mesh = SubResource("BoxMesh_sjafa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Piso"]
 shape = SubResource("BoxShape3D_lwcxv")
 
 [node name="Jugador" parent="." instance=ExtResource("1_aw433")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18721, 0)
+transform = Transform3D(1, 0, 0, 0, 0.999992, 0.00399679, 0, -0.00399679, 0.999992, 0, 1.18721, 0)
+
+[node name="Enemigobasico" parent="Jugador" instance=ExtResource("2_s5xif")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4194, 0.938917, -2.20948)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.929294, 0.277494, -0.243742, 4.46791e-10, 0.659936, 0.751322, 0.369341, -0.698199, 0.613275, -3.45296, 8.96544, 9.12263)
