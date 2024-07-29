@@ -1,0 +1,12 @@
+-Diseñar el mapa
+-Escribir la historia(vagamente al menos)
+-Movimientos de los guardias
+-iluminación
+-items
+-menu
+-sonido
+-musica
+-cinematicas?
+-voces?
+-diseñar puzzles
+-diseñar enemigos 
