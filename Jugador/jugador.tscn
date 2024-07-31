@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://0yrvh4w33ky"]
+[gd_scene load_steps=8 format=3 uid="uid://0yrvh4w33ky"]
 
 [ext_resource type="Script" path="res://Jugador/Jugador.gd" id="1_erek2"]
 [ext_resource type="PackedScene" uid="uid://5x286ujn2g53" path="res://Mecanicas/Interact/interact_ray.tscn" id="2_wspjr"]
@@ -9,6 +9,12 @@ height = 1.5
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ub2b3"]
 height = 1.5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o60i5"]
+bg_color = Color(0.243137, 0.254902, 0.243137, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_or4c3"]
+bg_color = Color(0.592157, 0.0588235, 0.196078, 1)
 
 [node name="Jugador" type="CharacterBody3D"]
 script = ExtResource("1_erek2")
@@ -40,3 +46,14 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_qigcr")
 expand_mode = 1
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="barraVida" type="ProgressBar" parent="GUI"]
+offset_left = 21.0
+offset_top = 19.0
+offset_right = 306.0
+offset_bottom = 68.0
+theme_override_styles/background = SubResource("StyleBoxFlat_o60i5")
+theme_override_styles/fill = SubResource("StyleBoxFlat_or4c3")
+show_percentage = false

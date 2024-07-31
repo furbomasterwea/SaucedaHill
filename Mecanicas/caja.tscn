@@ -16,3 +16,4 @@ mesh = SubResource("BoxMesh_5hu8o")
 shape = SubResource("BoxShape3D_643gw")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="interacted" from="." to="." method="_on_interacted"]

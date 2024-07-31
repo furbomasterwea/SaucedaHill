@@ -3,9 +3,22 @@ extends CharacterBody3D
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
-
-
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+#Codigo de la barra de vida
+######################################################################
+@onready var barra_vida: ProgressBar = $GUI/barraVida
+var vida = 100
+#Inicializa el valor de la vida (o asi lo entendi)
+func _ready():
+	barra_vida.value = vida
+
+func actualizarVida(cantidad : int):
+	vida = vida + cantidad
+	barra_vida.value = vida
+	print(vida) 
+######################################################################
+
 
 #Codigo de la camara
 @onready var neck := $Neck
@@ -42,3 +55,5 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+
