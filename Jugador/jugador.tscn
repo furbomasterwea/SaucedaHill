@@ -52,8 +52,7 @@ expand_mode = 1
 [node name="barraVida" type="ProgressBar" parent="GUI"]
 offset_left = 21.0
 offset_top = 19.0
-offset_right = 306.0
-offset_bottom = 68.0
+offset_right = 324.0
+offset_bottom = 60.0
 theme_override_styles/background = SubResource("StyleBoxFlat_o60i5")
 theme_override_styles/fill = SubResource("StyleBoxFlat_or4c3")
-show_percentage = false

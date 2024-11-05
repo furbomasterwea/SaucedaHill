@@ -12,11 +12,14 @@ var vida = 100
 #Inicializa el valor de la vida (o asi lo entendi)
 func _ready():
 	barra_vida.value = vida
+	
+	#barra_vida.show_percentage(bool True)
+	
 
-func actualizarVida(cantidad : int):
-	vida = vida + cantidad
-	barra_vida.value = vida
-	print(vida) 
+func actualizarVida(cantidad):
+	vida += cantidad
+	barra_vida.Value = vida
+	print(vida)
 ######################################################################
 
 
